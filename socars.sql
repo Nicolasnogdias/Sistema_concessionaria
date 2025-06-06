@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-CREATE DATABASE socars;
+CREATE DATABASE IF NOT EXISTS socars;
 USE socars;
 
 -- Tabela de Marcas
@@ -35,66 +35,64 @@ CREATE TABLE usuario (
     acesso ENUM('cliente', 'admin') NOT NULL
 );
 
+CREATE INDEX idx_modelo_marca ON modelo(id_marca);
+CREATE INDEX idx_modelo_categoria ON modelo(id_categoria);
+CREATE INDEX idx_modelo_preco ON modelo(preco);
+CREATE INDEX idx_modelo_nome ON modelo(nome_modelo);
+CREATE INDEX idx_usuario_acesso ON usuario(acesso);
+
 -- Tabela: marca
-INSERT INTO marca (id, nome_marca) VALUES
-(1, 'Volkswagen'),
-(2, 'Honda'),
-(3, 'Chevrolet'),
-(4, 'Fiat'),
-(5, 'Hyundai');
+INSERT INTO marca (nome_marca) VALUES
+('Volkswagen'),
+('Honda'),
+('Chevrolet'),
+('Fiat'),
+('Hyundai');
 
 -- Tabela: categoria
-INSERT INTO categoria (id, nome_categoria) VALUES
-(1, 'Sedan'),
-(2, 'Hatch'),
-(3, 'SUV');
+INSERT INTO categoria (nome_categoria) VALUES
+('Sedan'),
+('Hatch'),
+('SUV');
 
--- Tabela: modelo
 INSERT INTO modelo (nome_modelo, ano, cor, preco, motor, descricao, imagem, id_marca, id_categoria) VALUES
--- Volkswagen
-('Jetta', 2025, 'Preto', 165000.00, '2.0 TSI Turbo', 'O Jetta 2025 entrega sofisticação, desempenho e tecnologia. Com motor 2.0 turbo, oferece uma condução esportiva aliada ao máximo conforto, além de um design elegante e imponente.', 'uploads/jetta.jpg', 1, 1),
-('T-Cross', 2025, 'Cinza', 145000.00, '1.4 TSI', 'O T-Cross 2025 é o SUV ideal para quem busca tecnologia, conforto e versatilidade. Equipado com motor TSI, entrega ótima performance com economia, além de itens de segurança de última geração.', 'uploads/tcross.jpg', 1, 3),
-('Polo', 2025, 'Vermelho', 120000.00, '1.0 TSI', 'O Polo 2025 chega renovado, com visual esportivo, motor turbo eficiente e excelente conectividade. Ideal para quem busca um hatch ágil, econômico e completo.', 'uploads/polo.jpg', 1, 2),
-('Golf', 2025, 'Azul', 135000.00, '1.4 TSI', 'O Golf 2025 alia desempenho, sofisticação e tecnologia de ponta. Ideal para quem busca esportividade com conforto.', 'uploads/golf.jpg', 1, 2),
-('Nivus', 2025, 'Vermelho', 128000.00, '1.0 TSI', 'O Nivus 2025 entrega estilo SUV com desempenho ágil e moderno. Perfeito para a cidade.', 'uploads/nivus.jpg', 1, 3),
-('Voyage', 2025, 'Branco', 88000.00, '1.6 Flex', 'O clássico Voyage 2025 combina economia, espaço e confiabilidade.', 'uploads/voyage.jpg', 1, 1),
-('Taos', 2025, 'Cinza', 185000.00, '1.4 TSI', 'O Volkswagen Taos 2025 oferece performance, espaço interno e muita tecnologia em um SUV completo.', 'uploads/taos.jpg', 1, 3),
+('Voyage', 2023, 'Branco', 82000.00, '1.6 Flex', 'O Voyage 2023 oferece economia, confiabilidade e bom espaço interno, ideal para uso urbano e viagens.', 'uploads/voyage.png', 1, 1),
+('Virtus', 2024, 'Prata', 98000.00, '1.0 TSI', 'O Virtus 2024 combina bom desempenho com conforto, sendo um dos sedãs compactos mais equilibrados do mercado.', 'uploads/virtus.png', 1, 1),
+('Gol', 2022, 'Preto', 73000.00, '1.0 Flex', 'O Gol 2022 é um hatch tradicional no Brasil, confiável e econômico para o dia a dia.', 'uploads/gol.png', 1, 2),
+('Polo', 2025, 'Vermelho', 120000.00, '1.0 TSI', 'O Polo 2025 traz visual renovado, motor turbo eficiente e bom pacote tecnológico.', 'uploads/polo.png', 1, 2),
+('T-Cross', 2023, 'Cinza', 137000.00, '1.0 TSI', 'O T-Cross 2023 é um SUV versátil, com motor turbo eficiente e ótimo espaço interno.', 'uploads/tcross.png', 1, 3),
+('Nivus', 2024, 'Azul', 125000.00, '1.0 TSI', 'Com visual moderno, o Nivus 2024 entrega bom desempenho e tecnologia para o uso diário.', 'uploads/nivus.png', 1, 3),
 
 -- Honda
-('Civic', 2025, 'Branco', 175000.00, '2.0 Flex', 'O Honda Civic 2025 combina sofisticação e esportividade. Com acabamento premium, tecnologias avançadas e desempenho robusto, é o sedã perfeito para quem não abre mão de conforto e segurança.', 'uploads/civic.jpg', 2, 1),
-('HR-V', 2025, 'Prata', 160000.00, '1.5 Turbo', 'O novo HR-V 2025 oferece espaço, tecnologia e eficiência. Seu motor turbo garante performance ágil com baixo consumo, enquanto o interior proporciona conforto para toda a família.', 'uploads/hrv.jpg', 2, 3),
-('Fit', 2025, 'Azul', 105000.00, '1.5 Flex', 'O Honda Fit 2025 é sinônimo de praticidade e versatilidade. Compacto por fora e espaçoso por dentro, perfeito para quem busca economia, conforto e muita funcionalidade no dia a dia.', 'uploads/fit.jpg', 2, 2),
-('City', 2025, 'Cinza', 112000.00, '1.5 Flex', 'O Honda City 2025 combina elegância e eficiência em um sedã compacto premium.', 'uploads/city.jpg', 2, 1),
-('WR-V', 2025, 'Preto', 109000.00, '1.5 Flex', 'Compacto e aventureiro, o WR-V 2025 é ideal para o trânsito urbano e pequenas aventuras.', 'uploads/wrv.jpg', 2, 3),
-('City Hatch', 2025, 'Vermelho', 107000.00, '1.5 Flex', 'O City Hatch 2025 entrega versatilidade, espaço e tecnologia em um hatch moderno.', 'uploads/cityhatch.jpg', 2, 2),
-('ZR-V', 2025, 'Branco', 195000.00, '2.0 Flex', 'SUV premium da Honda, o ZR-V 2025 oferece desempenho e sofisticação para quem exige mais.', 'uploads/zrv.jpg', 2, 3),
+
+('City', 2024, 'Cinza', 109000.00, '1.5 Flex', 'O Honda City 2024 oferece sofisticação e economia em um sedã compacto.', 'uploads/city.png', 2, 1),
+('Civic', 2022, 'Branco', 152000.00, '2.0 Flex', 'O Civic 2022 é referência em conforto e confiabilidade entre os sedãs médios.', 'uploads/civic.png', 2, 1),
+('Fit', 2022, 'Prata', 95000.00, '1.5 Flex', 'O Honda Fit 2022 é prático, espaçoso e ideal para quem busca economia com qualidade.', 'uploads/fit.png', 2, 2),
+('City Hatch', 2024, 'Vermelho', 112000.00, '1.5 Flex', 'O City Hatch 2024 entrega bom espaço interno e ótima dirigibilidade em um design moderno.', 'uploads/cityhatch.png', 2, 2),
+('HR-V', 2023, 'Prata', 145000.00, '1.5 Flex', 'O HR-V 2023 é um SUV confortável e prático, com espaço interno e eficiência no consumo.', 'uploads/hrv.png', 2, 3),
+('WR-V', 2022, 'Preto', 99000.00, '1.5 Flex', 'Compacto e robusto, o WR-V 2022 é ideal para a cidade e pequenas aventuras.', 'uploads/wrv.png', 2, 3),
 
 -- Chevrolet
-('Cruze', 2025, 'Prata', 155000.00, '1.4 Turbo', 'O Chevrolet Cruze 2025 se destaca pelo equilíbrio entre desempenho, tecnologia e conforto. Seu motor turbo oferece agilidade, enquanto os itens de segurança e conectividade garantem uma experiência premium.', 'uploads/cruze.jpg', 3, 1),
-('Tracker', 2025, 'Preto', 145000.00, '1.2 Turbo', 'O Tracker 2025 é um SUV compacto, moderno e cheio de tecnologia. Com motor turbo eficiente, oferece ótimo desempenho aliado a conforto, segurança e amplo espaço interno.', 'uploads/tracker.jpg', 3, 3),
-('Onix', 2025, 'Branco', 95000.00, '1.0 Turbo', 'O Onix 2025 chega com design renovado, alta conectividade e excelente consumo. Um hatch pensado para quem busca economia, praticidade e tecnologia no dia a dia.', 'uploads/onix.jpg', 3, 2),
-('Spin', 2025, 'Cinza', 98000.00, '1.8 Flex', 'O Chevrolet Spin 2025 é ideal para famílias, com amplo espaço interno e conforto.', 'uploads/spin.jpg', 3, 3),
-('Montana', 2025, 'Vermelho', 118000.00, '1.2 Turbo', 'A picape Montana 2025 alia versatilidade e performance urbana com robustez.', 'uploads/montana.jpg', 3, 3),
-('Onix Plus', 2025, 'Branco', 99000.00, '1.0 Turbo', 'O Onix Plus é o sedã ideal para quem busca economia e espaço com estilo.', 'uploads/onixplus.jpg', 3, 1),
-('Cobalt', 2025, 'Azul', 102000.00, '1.8 Flex', 'Confortável e espaçoso, o Cobalt 2025 é ideal para quem prioriza segurança e praticidade.', 'uploads/cobalt.jpg', 3, 1),
+
+('Onix Plus', 2024, 'Branco', 97000.00, '1.0 Turbo', 'O Onix Plus 2024 é um sedã compacto com ótimo consumo e conectividade.', 'uploads/onixplus.png', 3, 1),
+('Cobalt', 2022, 'Azul', 92000.00, '1.8 Flex', 'Espaçoso e confortável, o Cobalt 2022 é uma boa escolha para famílias.', 'uploads/cobalt.png', 3, 1),
+('Onix', 2025, 'Preto', 98000.00, '1.0 Turbo', 'O Onix 2025 é referência em tecnologia e economia entre os hatches.', 'uploads/onix.png', 3, 2),
+('Spin', 2023, 'Prata', 96000.00, '1.8 Flex', 'Ideal para famílias, o Spin 2023 oferece espaço e praticidade no dia a dia.', 'uploads/spin.png', 3, 2),
+('Tracker', 2023, 'Vermelho', 135000.00, '1.0 Turbo', 'O Tracker 2023 é um SUV compacto eficiente, com bom desempenho e espaço.', 'uploads/tracker.png', 3, 3),
+('Montana', 2024, 'Cinza', 125000.00, '1.2 Turbo', 'A nova Montana alia o conforto de um SUV com a praticidade de uma picape.', 'uploads/montana.png', 3, 3),
 
 -- Fiat
-('Cronos', 2025, 'Prata', 95000.00, '1.3 Firefly', 'O Fiat Cronos 2025 é o sedã que une espaço, conforto e custo-benefício. Com linhas elegantes, motor eficiente e amplo porta-malas, é ideal para quem busca praticidade com estilo.', 'uploads/cronos.jpg', 4, 1),
-('Pulse', 2025, 'Vermelho', 115000.00, '1.0 Turbo', 'O Fiat Pulse 2025 é o SUV compacto que surpreende. Com motor turbo, design arrojado e tecnologia embarcada, oferece uma condução prazerosa, segurança e muito estilo.', 'uploads/pulse.jpg', 4, 3),
-('Argo', 2025, 'Azul', 85000.00, '1.3 Flex', 'O Argo 2025 é o hatch perfeito para quem quer economia e conforto. Com linhas modernas, interior bem acabado e tecnologias que facilitam o dia a dia, ele se destaca na categoria.', 'uploads/argo.jpg', 4, 2),
-('Mobi', 2025, 'Prata', 68000.00, '1.0 Flex', 'O Fiat Mobi é o compacto ideal para o trânsito urbano: econômico, prático e moderno.', 'uploads/mobi.jpg', 4, 2),
-('Fastback', 2025, 'Preto', 135000.00, '1.3 Turbo', 'Com visual arrojado, o Fastback 2025 é um SUV coupé que entrega esportividade e conforto.', 'uploads/fastback.jpg', 4, 3),
-('Grand Siena', 2025, 'Branco', 78000.00, '1.0 Flex', 'Espaçoso e econômico, o Grand Siena 2025 é um sedã acessível e confiável.', 'uploads/gsiena.jpg', 4, 1);
 
+('Cronos', 2023, 'Prata', 89000.00, '1.3 Flex', 'O Fiat Cronos 2023 oferece espaço, economia e bom acabamento em um sedã acessível.', 'uploads/cronos.png', 4, 1),
+('Grand Siena', 2022, 'Branco', 75000.00, '1.0 Flex', 'Confiável e econômico, o Grand Siena 2022 é ideal para quem busca um sedã básico.', 'uploads/gsiena.png', 4, 1),
+('Argo', 2024, 'Azul', 88000.00, '1.3 Flex', 'O Argo 2024 se destaca pelo visual moderno, bom desempenho e economia.', 'uploads/argo.png', 4, 2),
+('Mobi', 2023, 'Vermelho', 69000.00, '1.0 Flex', 'Compacto e prático, o Mobi 2023 é ideal para o trânsito urbano.', 'uploads/mobi.png', 4, 2),
+('Pulse', 2024, 'Cinza', 118000.00, '1.0 Turbo', 'Com design arrojado, o Pulse 2024 oferece boa performance e espaço interno.', 'uploads/pulse.png', 4, 3),
+('Fastback', 2025, 'Preto', 132000.00, '1.3 Turbo', 'SUV coupé da Fiat, o Fastback 2025 entrega estilo e desempenho em um conjunto moderno.', 'uploads/fastback.png', 4, 3),
 
-
-
-
-
-
-
-
-
-
-
-
+-- Hyundai
+('HB20', 2025, 'Vermelho', 89000.00, '1.0 Turbo', 'O HB20 2025 é um hatch compacto moderno, com ótima eficiência e tecnologia.', 'uploads/hb20.png', 5, 2),
+('Creta', 2024, 'Prata', 138000.00, '1.0 Turbo', 'O Creta 2024 é um SUV urbano com design atualizado, motor eficiente e conforto de sobra.', 'uploads/creta.png', 5, 3),
+('HB20S', 2023, 'Branco', 95000.00, '1.0 Turbo', 'O HB20S 2023 oferece o equilíbrio entre economia e espaço, ideal para famílias.', 'uploads/hb20s.png', 5, 1),
+('Tucson', 2023, 'Azul', 158000.00, '1.6 Turbo', 'O Tucson 2023 se destaca pelo conforto, robustez e ótimo desempenho nas estradas.', 'uploads/tucson.png', 5, 3),
+('i30', 2022, 'Cinza', 78000.00, '1.6 Flex', 'O i30 é um hatch médio com visual esportivo e excelente dirigibilidade.', 'uploads/i30.png', 5, 2);
