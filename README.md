@@ -1,2 +1,2 @@
-# Sistema-concession-ria
-Sistema web de uma concessionária de carros
+Sistema_concessionaria
+Sistema web de uma concessionária de carros, utilizando PHP como linguagem de programação.
