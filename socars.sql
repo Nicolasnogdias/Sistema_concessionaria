@@ -78,7 +78,7 @@ INSERT INTO modelo (nome_modelo, ano, cor, preco, motor, descricao, imagem, id_m
 ('Cobalt', 2020, 'Preto', 92000.00, '1.8 Flex', 'Espaçoso e confortável, o Cobalt 2022 é uma boa escolha para famílias.', 'uploads/cobalt.png', 3, 1),
 ('Onix', 2025, 'Preto', 98000.00, '1.0 Turbo', 'O Onix 2025 é referência em tecnologia e economia entre os hatches.', 'uploads/onix.png', 3, 2),
 ('Spin', 2023, 'Prata', 96000.00, '1.8 Flex', 'Ideal para famílias, o Spin 2023 oferece espaço e praticidade no dia a dia.', 'uploads/spin.png', 3, 2),
-('Tracker', 2023, 'Vermelho', 135000.00, '1.0 Turbo', 'O Tracker 2023 é um SUV compacto eficiente, com bom desempenho e espaço.', 'uploads/tracker.png', 3, 3),
+('Tracker', 2025, 'Vermelho', 135000.00, '1.0 Turbo', 'O Tracker 2023 é um SUV compacto eficiente, com bom desempenho e espaço.', 'uploads/tracker.png', 3, 3),
 ('Montana', 2024, 'Cinza', 125000.00, '1.2 Turbo', 'A nova Montana alia o conforto de um SUV com a praticidade de uma picape.', 'uploads/montana.png', 3, 3),
 
 -- Fiat
