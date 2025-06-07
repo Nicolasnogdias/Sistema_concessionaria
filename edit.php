@@ -1,4 +1,6 @@
 <?php
+
+require_once 'verifica_admin.php';
 require 'conexao_socars.php';
 
 if (isset($_GET['id'])) {
