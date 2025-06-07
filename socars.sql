@@ -75,10 +75,10 @@ INSERT INTO modelo (nome_modelo, ano, cor, preco, motor, descricao, imagem, id_m
 -- Chevrolet
 
 ('Onix Plus', 2024, 'Branco', 97000.00, '1.0 Turbo', 'O Onix Plus 2024 é um sedã compacto com ótimo consumo e conectividade.', 'uploads/onixplus.png', 3, 1),
-('Cobalt', 2020, 'Preto', 92000.00, '1.8 Flex', 'Espaçoso e confortável, o Cobalt 2022 é uma boa escolha para famílias.', 'uploads/cobalt.png', 3, 1),
+('Cobalt', 2020, 'Preto', 92000.00, '1.8 Flex', 'Espaçoso e confortável, o Cobalt 2020 é uma boa escolha para famílias.', 'uploads/cobalt.png', 3, 1),
 ('Onix', 2025, 'Preto', 98000.00, '1.0 Turbo', 'O Onix 2025 é referência em tecnologia e economia entre os hatches.', 'uploads/onix.png', 3, 2),
 ('Spin', 2023, 'Prata', 96000.00, '1.8 Flex', 'Ideal para famílias, o Spin 2023 oferece espaço e praticidade no dia a dia.', 'uploads/spin.png', 3, 2),
-('Tracker', 2025, 'Vermelho', 135000.00, '1.0 Turbo', 'O Tracker 2023 é um SUV compacto eficiente, com bom desempenho e espaço.', 'uploads/tracker.png', 3, 3),
+('Tracker', 2025, 'Vermelho', 135000.00, '1.0 Turbo', 'O Tracker 2025 é um SUV compacto eficiente, com bom desempenho e espaço.', 'uploads/tracker.png', 3, 3),
 ('Montana', 2024, 'Cinza', 125000.00, '1.2 Turbo', 'A nova Montana alia o conforto de um SUV com a praticidade de uma picape.', 'uploads/montana.png', 3, 3),
 
 -- Fiat
@@ -93,6 +93,6 @@ INSERT INTO modelo (nome_modelo, ano, cor, preco, motor, descricao, imagem, id_m
 -- Hyundai
 ('HB20', 2022, 'Vermelho', 89000.00, '1.0 Turbo', 'O HB20 2025 é um hatch compacto moderno, com ótima eficiência e tecnologia.', 'uploads/hb20.png', 5, 2),
 ('Creta', 2024, 'Prata', 138000.00, '1.0 Turbo', 'O Creta 2024 é um SUV urbano com design atualizado, motor eficiente e conforto de sobra.', 'uploads/creta.png', 5, 3),
-('HB20S', 2023, 'Branco', 95000.00, '1.0 Turbo', 'O HB20S 2023 oferece o equilíbrio entre economia e espaço, ideal para famílias.', 'uploads/hb20s.png', 5, 1),
+('HB20S', 2023, 'Prata', 95000.00, '1.0 Turbo', 'O HB20S 2023 oferece o equilíbrio entre economia e espaço, ideal para famílias.', 'uploads/hb20s.png', 5, 1),
 ('Tucson', 2023, 'Azul', 158000.00, '1.6 Turbo', 'O Tucson 2023 se destaca pelo conforto, robustez e ótimo desempenho nas estradas.', 'uploads/tucson.png', 5, 3),
-('i30', 2022, 'Cinza', 78000.00, '1.6 Flex', 'O i30 é um hatch médio com visual esportivo e excelente dirigibilidade.', 'uploads/i30.png', 5, 2);
+('i30', 2022, 'Preto', 78000.00, '1.6 Flex', 'O i30 é um hatch médio com visual esportivo e excelente dirigibilidade.', 'uploads/i30.png', 5, 2);
