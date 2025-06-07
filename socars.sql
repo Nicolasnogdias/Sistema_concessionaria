@@ -95,4 +95,4 @@ INSERT INTO modelo (nome_modelo, ano, cor, preco, motor, descricao, imagem, id_m
 ('Creta', 2024, 'Prata', 138000.00, '1.0 Turbo', 'O Creta 2024 é um SUV urbano com design atualizado, motor eficiente e conforto de sobra.', 'uploads/creta.png', 5, 3),
 ('HB20S', 2023, 'Branco', 95000.00, '1.0 Turbo', 'O HB20S 2023 oferece o equilíbrio entre economia e espaço, ideal para famílias.', 'uploads/hb20s.png', 5, 1),
 ('Tucson', 2023, 'Azul', 158000.00, '1.6 Turbo', 'O Tucson 2023 se destaca pelo conforto, robustez e ótimo desempenho nas estradas.', 'uploads/tucson.png', 5, 3),
-('i30', 2022, 'Cinza', 78000.00, '1.6 Flex', 'O i30 é um hatch médio com visual esportivo e excelente dirigibilidade.', 'uploads/i30.png', 5, 2);
+('i30', 2022, 'Cinza', 78000.00, '1.6 Flex', 'O i30 é um hatch médio com visual esportivo e excelente dirigibilidade.', 'uploads/i30.png', 5, 2)
