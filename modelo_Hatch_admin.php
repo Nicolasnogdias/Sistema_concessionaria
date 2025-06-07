@@ -1,4 +1,6 @@
 <?php
+
+require_once 'verifica_admin.php';
 require 'conexao_socars.php';
 
 // Pega todas as marcas para popular o select
