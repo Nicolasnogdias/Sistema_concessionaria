@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
               </script>";
         exit;
 } else {
-    echo "Erro ao atualizar o modelo.";
+    echo "Erro ao excluir o modelo.";
 }
 }
 ?>
