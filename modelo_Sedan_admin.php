@@ -1,5 +1,8 @@
 <?php
+
+require_once 'verifica_admin.php';
 require 'conexao_socars.php';
+
 
 // Pega todas as marcas para popular o select
 $marcas = $pdo->query("SELECT * FROM marca")->fetchAll(PDO::FETCH_ASSOC);
