@@ -28,6 +28,9 @@ $modelos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="pt-br">
 <body>
 <h1>Todos os Carros</h1>
+<a href="home.php"><button>Retornar à página principal </button></a>
+
+<br><br>
 
 <!-- Formulário para filtro -->
 <form method="GET" action="">
