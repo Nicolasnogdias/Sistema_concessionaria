@@ -91,7 +91,7 @@ INSERT INTO modelo (nome_modelo, ano, cor, preco, motor, descricao, imagem, id_m
 ('Fastback', 2025, 'Preto', 132000.00, '1.3 Turbo', 'SUV coupé da Fiat, o Fastback 2025 entrega estilo e desempenho em um conjunto moderno.', 'uploads/fastback.png', 4, 3),
 
 -- Hyundai
-('HB20', 2025, 'Vermelho', 89000.00, '1.0 Turbo', 'O HB20 2025 é um hatch compacto moderno, com ótima eficiência e tecnologia.', 'uploads/hb20.png', 5, 2),
+('HB20', 2022, 'Vermelho', 89000.00, '1.0 Turbo', 'O HB20 2025 é um hatch compacto moderno, com ótima eficiência e tecnologia.', 'uploads/hb20.png', 5, 2),
 ('Creta', 2024, 'Prata', 138000.00, '1.0 Turbo', 'O Creta 2024 é um SUV urbano com design atualizado, motor eficiente e conforto de sobra.', 'uploads/creta.png', 5, 3),
 ('HB20S', 2023, 'Branco', 95000.00, '1.0 Turbo', 'O HB20S 2023 oferece o equilíbrio entre economia e espaço, ideal para famílias.', 'uploads/hb20s.png', 5, 1),
 ('Tucson', 2023, 'Azul', 158000.00, '1.6 Turbo', 'O Tucson 2023 se destaca pelo conforto, robustez e ótimo desempenho nas estradas.', 'uploads/tucson.png', 5, 3),
