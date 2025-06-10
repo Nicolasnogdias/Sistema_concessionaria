@@ -5,7 +5,7 @@ require_once 'conexao_socars.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    if ($id == 1 || $_SESSION['acesso'] == 'admin_insano') {
+    if ($id == 1) {
         echo "<script>
                 alert('Impossível deletar Administrador Principal.');
                 window.location.href = 'lista_admin.php';
@@ -15,14 +15,19 @@ if (isset($_GET['id'])) {
 
     $stmt = $pdo->prepare("DELETE FROM usuario WHERE id = :id AND acesso = 'admin'");
 
-    if ($stmt->execute(['id' => $id])) {
+    $stmt->execute(['id' => $id]);
+
+    if ($stmt->rowCount() > 0) {
         echo "<script>
                 alert('Administrador removido com sucesso.');
                 window.location.href = 'lista_admin.php';
               </script>";
-        exit;
     } else {
-        echo "Erro ao excluir o administrador.";
+        echo "<script>
+                alert('Erro: o administrador não foi encontrado ou não tem permissão para ser removido.');
+                window.location.href = 'lista_admin.php';
+              </script>";
     }
+    exit;
 }
-
+?>
