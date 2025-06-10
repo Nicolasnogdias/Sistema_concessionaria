@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     </form>
     <br>
     <a href="registro_user.php">
-        <button> Deseja se cadastrar bobão?</button>
+        <button> Deseja se cadastrar?</button>
     </a>
 </body>
 </html>
