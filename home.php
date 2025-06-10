@@ -16,7 +16,7 @@ require 'conexao_socars.php';
     <h1> Seja Bem vindo! </h1>
     <?php if(isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'admin'): ?>
         <h3> O seu acesso é de <?php echo htmlspecialchars($_SESSION['acesso'])?></h3>
-        <h3> O seu acesso é de <?php echo htmlspecialchars($_SESSION['nome'])?></h3>
+        <h3> O seu nome é <?php echo htmlspecialchars($_SESSION['nome'])?></h3>
         <a href="registro_admin.php"> <button> Cadastro de administradores. </button></a>
         <a href="login.php"> <button> Login. </button></a>
         <a href="logout.php"><button> Desconectar. </button> </a>
@@ -24,7 +24,7 @@ require 'conexao_socars.php';
         <a href="lista_admin.php"><button> Lista de administradores. </button></a>
     <?php elseif(isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'cliente'): ?>
         <h3> O seu acesso é de <?php echo htmlspecialchars($_SESSION['acesso'])?></h3>
-        <h3> O seu acesso é de <?php echo htmlspecialchars($_SESSION['nome'])?></h3>
+        <h3> O seu nome é <?php echo htmlspecialchars($_SESSION['nome'])?></h3>
          <a href="carros.php"><button>Carros.</button></a> 
          <a href="logout.php"><button> Desconectar. </button> </a>
     <?php else: ?>
