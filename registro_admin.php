@@ -1,11 +1,7 @@
 <?php
-session_start();
-require 'conexao_socars.php';
 
-if (!isset($_SESSION['acesso']) || $_SESSION['acesso'] !== 'admin') {
-    echo 'Permissão negada. Somente administradores podem interagir nesta página.';
-    exit;
-}
+require_once 'verifica_admin.php';
+require 'conexao_socars.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $nome_admin = $_POST['nome_admin'];
@@ -13,6 +9,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $senha_admin = $_POST['senha_admin'];
     $acesso = 'admin';
 
+    $sql = "SELECT * FROM usuario WHERE email = :email"; 
+    $stmt = $pdo->prepare($sql); 
+    $stmt ->bindParam(':email', $email_admin); 
+    $stmt-> execute();
+    $verifica =  $stmt->fetch(PDO::FETCH_ASSOC); 
+
+    if($verifica){
+       echo "<script>
+                alert('Email já cadastrado. Redirecionando para login.');
+                window.location.href = 'login.php';
+            </script>";
+        exit;
+    } else {
     $senha_cript = password_hash($senha_admin, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuario (nome, email, senha, acesso) VALUES 
     (:nome, :email, :senha, :acesso)";
@@ -24,16 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $stmt-> bindParam(':acesso', $acesso);
 
     if ($stmt -> execute()){
-        $_SESSION['nome'] = $nome_admin;
-        $_SESSION['email'] = $email_admin;
-        $_SESSION['acesso'] = $acesso;
-        header('Location: home.php');
+        echo "<script>
+                alert('Administrador cadastrado com Sucesso!');
+                 window.location.href = 'home.php';
+            </script>"; 
     } else {
-        echo "Erro ao cadastrar usuário.";
-        
+        echo "Erro ao cadastrar usuário.";   
+        }
     }
-
 }
+
+
 ?>
 
 <!DOCTYPE html>

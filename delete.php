@@ -1,5 +1,6 @@
 <?php
 require 'conexao_socars.php';
+require_once 'verifica_admin.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -16,7 +17,7 @@ if (isset($_GET['id'])) {
         exit;
 } else {
     echo "Erro ao excluir o modelo.";
-}
+    }
 }
 ?>
-?>
+
