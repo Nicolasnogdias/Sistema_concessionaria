@@ -29,7 +29,7 @@ require 'conexao_socars.php';
          <a href="carros.php"><button>Carros.</button></a> 
          <a href="logout.php"><button> Desconectar. </button> </a>
 
-    <?php elseif (isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'admin_insano'): ?> <!-- ADMINS INSANOS-->
+    <?php elseif (isset($_SESSION['acesso']) && $_SESSION['acesso'] == 'admin_principal'): ?> <!-- ADMINS PRINCIPAIS-->
         <h3> O seu acesso é de <?php echo htmlspecialchars($_SESSION['acesso'])?></h3>
         <h3> O seu nome é <?php echo htmlspecialchars($_SESSION['nome'])?></h3>
 
