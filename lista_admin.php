@@ -3,7 +3,7 @@ require_once 'conexao_socars.php';
 require_once 'verifica_admin.php';
 require 'processa_delete.php';
 
-$dados = $pdo->query("SELECT * FROM usuario WHERE acesso = 'admin' OR acesso = 'admin_insano'")->fetchAll(PDO::FETCH_ASSOC);
+$dados = $pdo->query("SELECT * FROM usuario WHERE acesso = 'admin' OR acesso = 'admin_principal'")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
